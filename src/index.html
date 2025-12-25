@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List TOP</title>
+</head>
+<body>
+    <section class="homepage">
+        <header>
+            <h1 class="title">Add your tasks, get it done!</h1>
+        </header>
+        <main>
+            <div class="side__container">
+                <div class="project-list__container">
+                </div>
+                <button class="project-list__btn btn btn--center">
+                    Add Project
+                </button>
+            </div>
+            <div class="main__container">
+                <div class="todo-list__container">
+                </div>
+                <button class="todo-list__btn btn btn--center">
+                    Add Todo
+                </button>
+            </div>
+        </main>
+    </section>
+
+    <form action="submit" class="project-form form hidden">
+        <fieldset>
+            <legend>Add Project</legend>
+            <label for="project-title">Title</label>
+            <input type="text" id="project-title">
+            <button type="button" class="project-back-btn btn">Back</button>
+            <button type="submit" class="project-submit-btn btn btn--primary">Add</button>
+        </fieldset>
+    </form>
+    <form action="submit" class="todo-form form hidden">
+        <fieldset>
+            <legend>Add Todo</legend>
+            <label for="todo-title">Title</label>
+            <input type="text" id="todo-title">
+        
+            <label for="todo-desc">Description</label>
+            <input type="textarea" id="todo-desc">
+            <label for="todo-due-date">Due Date</label>
+            <input type="date" id="todo-due-date">
+            <label for="todo-priority">Priortiy</label>
+            <select id="todo-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button type="button" class="todo-back-btn btn">Back</button>
+            <button type="submit" class="todo-submit-btn btn btn--primary">Add</button>
+        </fieldset>
+    </form>
+</body>
+</html>
