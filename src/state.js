@@ -2,30 +2,30 @@ class GlobalState {
     constructor(){
         this.state = {
             projectListItems: [
-                { id: "p1", name: "Project 1" },
-                { id: "p2", name: "Project 2" },
+                { id: "p1", name: "Home" },
+                { id: "p2", name: "Health" },
             ],
             todoListItems: [
                 {
                     id: crypto.randomUUID(),
                     projectId: "p1",
-                    title: "Todo 1",
-                    desc: "Todo 1 description",
+                    title: "Buy Food",
+                    desc: "From the grocery store",
                     completed: false,
                     dueDate: new Date(),
                     priority: "high",
                 },
                 {
                     id: crypto.randomUUID(),
-                    projectId: "p1",
-                    title: "Todo 2",
-                    desc: "Todo 2 description",
+                    projectId: "p2",
+                    title: "Go to the gym",
+                    desc: "",
                     completed: true,
                     dueDate: new Date(),
                     priority: "low",
                 }
             ],
-            currentProjectId: 1,
+            currentProjectId: "p1",
             filter: "all",
         }
 
