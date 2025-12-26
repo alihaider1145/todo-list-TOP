@@ -148,6 +148,10 @@ li > *{
     margin-top: 0;
 }
 
+.project-item{
+    cursor: pointer;
+}
+
 /* component attributes */
 
 .btn--form{

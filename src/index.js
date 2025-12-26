@@ -6,10 +6,11 @@ import { createProjectList } from "./components/project-list.js";
 import { createProjectItem } from "./components/project-item.js";
 import { showTodoForm, showProjectForm, hideProjectForm, hideTodoForm } from "./formPopup.js";
 import { projectFormHandler, todoFormHandler } from "./formInput.js";
+import { projectToggleHandler } from "../projectToggle.js";
 
 (function init(){
     const todoList = createTodoList();
-    let todoItems = createTodoItem(todoList, globalState.getState().todoListItems);
+    let todoItems = createTodoItem(todoList);
     const projectList = createProjectList();
     let projectItems = createProjectItem(projectList, globalState.getState().projectListItems);
 
@@ -19,6 +20,7 @@ import { projectFormHandler, todoFormHandler } from "./formInput.js";
     })
 })();
 
+document.querySelector(".project-list").addEventListener("click", projectToggleHandler);
 document.querySelector(".todo-list__btn").addEventListener("click", showTodoForm);
 document.querySelector(".project-list__btn").addEventListener("click", showProjectForm);
 document.querySelector(".project-back-btn").addEventListener("click", hideProjectForm);

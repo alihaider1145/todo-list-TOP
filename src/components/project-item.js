@@ -6,6 +6,7 @@ function createProjectItem(projectList, state){
     state.forEach(project => {
         const projectItem = createEle("li", `${project.name}`, projectList);
         addClass(projectItem, "project-item");
+        projectItem.setAttribute("data-id", `${project.id}`);
     }); 
 
     return (document.querySelectorAll(".project-item"));
