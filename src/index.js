@@ -8,7 +8,6 @@ import { showTodoForm, showProjectForm, hideProjectForm, hideTodoForm } from "./
 import { projectFormHandler, todoFormHandler } from "./formInput.js";
 import { projectToggleHandler } from "./projectToggle.js";
 import { editTodoHandler } from "./todoEdit.js";
-import { deleteTodoHandler } from "./todoDel.js";
 
 (function init(){
     const todoList = createTodoList();
