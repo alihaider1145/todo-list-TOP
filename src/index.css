@@ -66,23 +66,6 @@ legend{
     padding: 1rem;
 }
 
-.btn--center{
-    display: block;
-    margin: var(--container-margin) auto;
-}
-
-.btn--primary{
-    background-color: var(--primary-clr);
-}
-
-.btn:hover{
-    background-color: var(--bg-clr);
-}
-
-.btn--primary:hover{
-    background-color: var(--secondary-clr);
-}
-
 input{
     border: 1px solid var(--border-clr);
     border-radius: 1.6rem;
@@ -111,6 +94,8 @@ li > *{
     flex-grow: 1;
     min-width: 0;
 }
+
+/* Todo Item */
 
 .todo-due-date{
     text-align: right;
@@ -144,6 +129,8 @@ li > *{
     border-left: 0;
 }
 
+/* Project Item */
+
 .project-item:first-of-type{
     margin-top: 0;
 }
@@ -157,6 +144,23 @@ li > *{
 }
 
 /* component attributes */
+
+.btn--center{
+    display: block;
+    margin: var(--container-margin) auto;
+}
+
+.btn--primary{
+    background-color: var(--primary-clr);
+}
+
+.btn:hover{
+    background-color: var(--bg-clr);
+}
+
+.btn--primary:hover{
+    background-color: var(--secondary-clr);
+}
 
 .btn--form{
     border: none;
