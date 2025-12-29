@@ -12,6 +12,7 @@ function createTodoItem(todoList){
 
             const todoItem = createEle("li", null, todoList);
             addClass(todoItem, "todo-item", `${todo.priority}`);
+            todoItem.id = todo.id;
 
             const todoCompleted = createEle("span", null, todoItem);
             addClass(todoCompleted, `todo-state`, `${todoCompleteClass}`);

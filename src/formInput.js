@@ -13,7 +13,7 @@ function projectFormHandler(e){
         }]
     });
 
-    projectTitleValue = "";
+    document.querySelector("#project-title").value = "";
 }
 
 function todoFormHandler(e){
@@ -29,7 +29,8 @@ function todoFormHandler(e){
     let todoDueDateValue = todoDueDateInput.value;
     let todoPriorityValue = todoPriorityInput.value;
     
-    globalState.setState({todoListItems: [...globalState.getState().todoListItems, 
+    if(!globalState.getState().currentTodoId){
+        globalState.setState({todoListItems: [...globalState.getState().todoListItems, 
         {
             id: crypto.randomUUID(), 
             projectId: globalState.getState().currentProjectId, 
@@ -40,7 +41,18 @@ function todoFormHandler(e){
             completed: false
         }]
     });
-    
+    }
+    else if(globalState.getState().currentProjectId){
+        const todo = globalState.getState().todoListItems.find(todo => todo.id === globalState.getState().currentTodoId);
+        todo.title = todoTitleValue;
+        todo.desc = todoDescValue;
+        todo.dueDate = new Date(todoDueDateValue);
+        todo.priority = todoPriorityValue;
+
+        globalState.setState({todoListItems: [...globalState.getState().todoListItems.filter(todo => todo.id !== globalState.getState().currentTodoId), todo]});
+        console.log(globalState.getState().todoListItems);
+    }
+
     todoTitleInput.value = "";
     todoDescInput.value = "";
     todoDueDateInput.value = "";

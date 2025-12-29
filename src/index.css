@@ -148,8 +148,12 @@ li > *{
     margin-top: 0;
 }
 
-.project-item{
+.project-item,.todo-item{
     cursor: pointer;
+}
+
+.project-item{
+    font-weight: 700;
 }
 
 /* component attributes */

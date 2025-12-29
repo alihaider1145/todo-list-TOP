@@ -1,4 +1,4 @@
-import globalState from "./src/state.js";
+import globalState from "./state.js";
 
 function projectToggleHandler(e){
     if (e.target && e.target.matches(".project-item")) {

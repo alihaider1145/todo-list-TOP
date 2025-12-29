@@ -26,7 +26,8 @@ class GlobalState {
                 }
             ],
             currentProjectId: "p1",
-            filter: "all",
+            currentTodoId: null,
+            submitAction: "add",
         }
 
         this.listeners = [];
