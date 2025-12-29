@@ -22,7 +22,6 @@ import { deleteTodoHandler } from "./todoDel.js";
     })
 })();
 
-document.querySelector(".todo-del-btn").addEventListener("click", deleteTodoHandler);
 document.querySelector(".todo-list").addEventListener("click", editTodoHandler);
 document.querySelector(".project-list").addEventListener("click", projectToggleHandler);
 document.querySelector(".todo-list__btn").addEventListener("click", showTodoForm);
