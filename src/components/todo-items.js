@@ -28,6 +28,9 @@ function createTodoItem(todoList){
 
             const todoDueDate = createEle("p", `${format(todo.dueDate, "dd MMM yyyy")}`, todoItem);
             addClass(todoDueDate, "todo-due-date");
+
+            const todoDelBtn = createEle("button", "🗑️", todoItem);
+            addClass(todoDelBtn, "todo-del-btn");
         }
     }
 
