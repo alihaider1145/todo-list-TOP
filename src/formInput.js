@@ -29,6 +29,16 @@ function todoFormHandler(e){
     let todoDueDateValue = todoDueDateInput.value;
     let todoPriorityValue = todoPriorityInput.value;
     
+    if(todoTitleValue === ""){
+        alert("Title is required");
+        return;
+    }
+
+    if(todoDueDateValue !== "" && !/\d{4}-\d{2}-\d{2}/.test(todoDueDateValue)){
+        alert("Invalid date format. Please use YYYY-MM-DD format.");
+        return;
+    }
+
     if(!globalState.getState().currentTodoId){
         globalState.setState({todoListItems: [...globalState.getState().todoListItems, 
         {
