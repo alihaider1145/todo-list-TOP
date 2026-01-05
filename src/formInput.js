@@ -34,7 +34,7 @@ function todoFormHandler(e){
         return;
     }
 
-    if(todoDueDateValue !== "" && !/\d{4}-\d{2}-\d{2}/.test(todoDueDateValue)){
+    if((todoDueDateValue) && (todoDueDateValue !== "" && !/\d{4}-\d{2}-\d{2}/.test(todoDueDateValue))){
         alert("Invalid date format. Please use YYYY-MM-DD format.");
         return;
     }
@@ -60,7 +60,6 @@ function todoFormHandler(e){
         todo.priority = todoPriorityValue;
 
         globalState.setState({todoListItems: [...globalState.getState().todoListItems.filter(todo => todo.id !== globalState.getState().currentTodoId), todo]});
-        console.log(globalState.getState().todoListItems);
     }
 
     todoTitleInput.value = "";

@@ -8,11 +8,19 @@ import { showTodoForm, showProjectForm, hideProjectForm, hideTodoForm } from "./
 import { projectFormHandler, todoFormHandler } from "./formInput.js";
 import { projectToggleHandler } from "./projectToggle.js";
 import { editTodoHandler } from "./todoEdit.js";
+import { checkStorage } from "./localstorage.js";
 
 (function init(){
+    try{
+        checkStorage()
+    }
+    catch{
+        console.log("storage not found");
+    }
+
     const todoList = createTodoList();
     let todoItems = createTodoItem(todoList);
-    const projectList = createProjectList();
+    const projectList = createProjectList();              
     let projectItems = createProjectItem(projectList, globalState.getState().projectListItems);
 
     globalState.subscribe(() => {

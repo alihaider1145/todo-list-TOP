@@ -11,8 +11,10 @@ function createTodoItem(todoList){
             let todoCompleteClass = ((todo.completed) ? ("finished") : ("unfinished"));
 
             const todoItem = createEle("li", null, todoList);
-            addClass(todoItem, "todo-item", `${todo.priority}`);
-            todoItem.id = todo.id;
+            if(todo.priority){
+                addClass(todoItem, "todo-item", `${todo.priority}`);
+                todoItem.id = todo.id;
+            }
 
             const todoCompleted = createEle("span", null, todoItem);
             addClass(todoCompleted, `todo-state`, `${todoCompleteClass}`);
@@ -26,8 +28,10 @@ function createTodoItem(todoList){
             const todoDesc = createEle("p", todo.desc, todoLeft);
             addClass(todoDesc, "todo-desc");
 
-            const todoDueDate = createEle("p", `${format(todo.dueDate, "dd MMM yyyy")}`, todoItem);
-            addClass(todoDueDate, "todo-due-date");
+            if((todo.dueDate instanceof Date) && (!isNaN(todo.dueDate))){
+                const todoDueDate = createEle("p", `${format(todo.dueDate, "dd MMM yyyy")}`, todoItem);
+                addClass(todoDueDate, "todo-due-date");
+            }
 
             const todoDelBtn = createEle("button", "🗑️", todoItem);
             addClass(todoDelBtn, "todo-del-btn");

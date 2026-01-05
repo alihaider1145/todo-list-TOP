@@ -1,3 +1,5 @@
+import { saveStorage } from "./localstorage";
+
 class GlobalState {
     constructor(){
         this.state = {
@@ -39,6 +41,7 @@ class GlobalState {
 
     setState(newState){
         this.state = { ...this.state, ...newState};
+        saveStorage();
         this.notify();
     }
 
