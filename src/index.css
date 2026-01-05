@@ -129,7 +129,7 @@ li > *{
     border-left: 0;
 }
 
-.todo-del-btn{
+.todo-del-btn, .project-del-btn{
     cursor: pointer;
     border: none;
     flex-grow: 0;

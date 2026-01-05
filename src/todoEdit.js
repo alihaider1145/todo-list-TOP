@@ -1,4 +1,4 @@
-import { showTodoForm } from "./formPopup";
+import { showTodoForm } from "./formPopup.js";
 import globalState from "./state";
 
 function editTodoHandler(e) {

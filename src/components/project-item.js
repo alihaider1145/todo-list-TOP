@@ -7,6 +7,9 @@ function createProjectItem(projectList, state){
         const projectItem = createEle("li", `${project.name}`, projectList);
         addClass(projectItem, "project-item");
         projectItem.setAttribute("data-id", `${project.id}`);
+
+        const projectDelBtn = createEle("button", "🗑️", projectItem);
+        addClass(projectDelBtn, "project-del-btn");
     }); 
 
     return (document.querySelectorAll(".project-item"));

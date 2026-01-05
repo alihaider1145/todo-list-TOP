@@ -8,6 +8,7 @@ import { showTodoForm, showProjectForm, hideProjectForm, hideTodoForm } from "./
 import { projectFormHandler, todoFormHandler } from "./formInput.js";
 import { projectToggleHandler } from "./projectToggle.js";
 import { editTodoHandler } from "./todoEdit.js";
+import { editProjectHandler } from "./projectEdit.js";
 import { checkStorage } from "./localstorage.js";
 
 (function init(){
@@ -29,6 +30,7 @@ import { checkStorage } from "./localstorage.js";
     })
 })();
 
+document.querySelector(".project-list").addEventListener("click", editProjectHandler);
 document.querySelector(".todo-list").addEventListener("click", editTodoHandler);
 document.querySelector(".project-list").addEventListener("click", projectToggleHandler);
 document.querySelector(".todo-list__btn").addEventListener("click", showTodoForm);
